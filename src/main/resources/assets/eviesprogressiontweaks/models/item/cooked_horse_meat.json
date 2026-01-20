@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "eviesprogressiontweaks:item/cooked_horse_meat"
+  }
+}

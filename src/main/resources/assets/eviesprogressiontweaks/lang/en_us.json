@@ -1,0 +1,15 @@
+{
+  "itemGroup.eviesprogressiontweaks": "Example Mod Tab",
+  "block.eviesprogressiontweaks.example_block": "Example Block",
+  "item.eviesprogressiontweaks.example_item": "Example Item",
+
+  "eviesprogressiontweaks.configuration.title": "Evie's Progression Tweaks Configs",
+  "eviesprogressiontweaks.configuration.section.eviesprogressiontweaks.common.toml": "Evie's Progression Tweaks Configs",
+  "eviesprogressiontweaks.configuration.section.eviesprogressiontweaks.common.toml.title": "Evie's Progression Tweaks Configs",
+  "eviesprogressiontweaks.configuration.items": "Item List",
+  "eviesprogressiontweaks.configuration.logDirtBlock": "Log Dirt Block",
+  "eviesprogressiontweaks.configuration.magicNumberIntroduction": "Magic Number Text",
+  "eviesprogressiontweaks.configuration.magicNumber": "Magic Number",
+  "item.eviesprogressiontweaks.raw_horse_meat": "Raw Horse Meat",
+  "item.eviesprogressiontweaks.cooked_horse_meat": "Cooked Horse Meat"
+}
