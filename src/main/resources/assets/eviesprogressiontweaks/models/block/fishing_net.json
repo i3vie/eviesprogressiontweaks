@@ -1,0 +1,19 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "eviesprogressiontweaks:block/fishing_net",
+    "sheet": "eviesprogressiontweaks:block/fishing_net"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 7],
+      "to": [16, 16, 9],
+      "faces": {
+        "north": { "texture": "#sheet" },
+        "south": { "texture": "#sheet" },
+        "east":  { "texture": "#sheet" },
+        "west":  { "texture": "#sheet" }
+      }
+    }
+  ]
+}

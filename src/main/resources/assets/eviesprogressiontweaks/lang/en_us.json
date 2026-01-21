@@ -11,5 +11,8 @@
   "eviesprogressiontweaks.configuration.magicNumberIntroduction": "Magic Number Text",
   "eviesprogressiontweaks.configuration.magicNumber": "Magic Number",
   "item.eviesprogressiontweaks.raw_horse_meat": "Raw Horse Meat",
-  "item.eviesprogressiontweaks.cooked_horse_meat": "Cooked Horse Meat"
+  "item.eviesprogressiontweaks.cooked_horse_meat": "Cooked Horse Meat",
+  "item.eviesprogressiontweaks.rotten_meat": "Rotten Meat",
+  "tooltip.meat_decay.fresh": "§7This meat is: §aFresh §7for the next §6%1$s minutes",
+  "tooltip.meat_decay.old":   "§7This meat is: §eOld §7for the next §6%1$s minutes"
 }

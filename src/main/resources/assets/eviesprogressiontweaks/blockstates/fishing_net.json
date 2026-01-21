@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "eviesprogressiontweaks:block/fishing_net" },
+    "facing=south": { "model": "eviesprogressiontweaks:block/fishing_net", "y": 180 },
+    "facing=west":  { "model": "eviesprogressiontweaks:block/fishing_net", "y": 270 },
+    "facing=east":  { "model": "eviesprogressiontweaks:block/fishing_net", "y": 90 }
+  }
+}

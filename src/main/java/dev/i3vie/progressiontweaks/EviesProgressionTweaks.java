@@ -1,8 +1,16 @@
 package dev.i3vie.progressiontweaks;
 
+import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
+import dev.i3vie.progressiontweaks.block.FishingNetBlock;
 import dev.i3vie.progressiontweaks.glms.HorseMeatLootMod;
 import dev.i3vie.progressiontweaks.items.HorseMeats;
+import dev.i3vie.progressiontweaks.items.RottenMeat;
+import dev.i3vie.progressiontweaks.rot.MeatDecayHelpers;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.registries.*;
 import org.slf4j.Logger;
@@ -17,6 +25,8 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import java.util.function.Supplier;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(EviesProgressionTweaks.MOD_ID)
 public class EviesProgressionTweaks {
@@ -30,16 +40,23 @@ public class EviesProgressionTweaks {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MOD_ID);
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, MOD_ID);
+    public static final DeferredRegister<DataComponentType<?>> COMPONENTS =
+            DeferredRegister.createDataComponents(Registries.DATA_COMPONENT_TYPE, MOD_ID);
 
     public EviesProgressionTweaks(IEventBus modEventBus, ModContainer modContainer) {
         modEventBus.addListener(this::commonSetup);
 
-        ITEMS.register(modEventBus);
         BLOCKS.register(modEventBus);
+        ITEMS.register(modEventBus);
         HorseMeats.register();
+        RottenMeat.register();
+        FishingNetBlock.register();
 
         GLOBAL_LOOT_MODIFIER_SERIALIZERS.register(modEventBus);
         GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("horse_horsemeat", () -> HorseMeatLootMod.CODEC);
+
+        COMPONENTS.register(modEventBus);
+        MeatDecayHelpers.register();
 
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
